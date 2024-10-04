@@ -9,3 +9,7 @@
 4-1. 아래 Item이 하나라도 Off가 되면 Check All도 Off가 되어야 함
 4-2. 아래 Item이 모두 On이 되면 Check All도 On이 되어야 함
 5. Search Input을 입력하면 Item title에 대해서 검색해서 검색된 항목만 List에 보임
+
+---
+위 과제와 관련해 궁금한 사항이 있다면 언제든지 아래 연락처로 문의해 주십시오.
+> 담당자 문의: dev@44labs.com
