@@ -1,0 +1,31 @@
+version: '3'
+services:
+  user-service:
+    build: ./user
+    ports:
+      - "5001:5001"
+    networks:
+      - microservices-network
+
+  post-service:
+    build: ./post
+    ports:
+      - "5002:5002"
+    networks:
+      - microservices-network
+    depends_on:
+      - user-service
+
+  notification-service:
+    build: ./notification
+    ports:
+      - "5003:5003"
+    networks:
+      - microservices-network
+    depends_on:
+      - user-service
+      - post-service
+
+networks:
+  microservices-network:
+    driver: bridge
