@@ -1,0 +1,26 @@
+services:
+  # mysql
+  mysql:
+    image: mysql:latest
+    container_name: interview-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Zeroskill2400
+      MYSQL_DATABASE: db
+      MYSQL_USER: zeroskill2400  # 새로운 사용자
+      MYSQL_PASSWORD: Zeroskill2400  # 새로운 사용자 비밀번호
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/init.sql  # init.sql 파일을 컨테이너에 마운트
+    healthcheck:
+      test: [ "CMD-SHELL", "mysqladmin ping -h localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command:
+      - --default-authentication-plugin=caching_sha2_password
+      - --init-file=/init.sql
+
+volumes:
+  mysql_data:
