@@ -1,5 +1,6 @@
 package org.zeroskill.common.util;
 
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
@@ -28,5 +29,19 @@ public class AuthUtil {
                 .setExpiration(new Date(System.currentTimeMillis() + 1800000))  // 30분
                 .signWith(SignatureAlgorithm.HS512, secretKey)
                 .compact();
+    }
+
+    public static boolean validateJwt(String token) {
+        if (token == null || token.isEmpty()) {
+            return false; // null 또는 빈 값일 경우 인증 실패로 처리
+        }
+        try {
+            Jwts.parser()
+                    .setSigningKey(secretKey)
+                    .parseClaimsJws(token.replace("Bearer ", ""));
+            return true; // 인증 성공
+        } catch (JwtException e) {
+            return false; // 인증 실패
+        }
     }
 }
