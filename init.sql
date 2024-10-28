@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS user (
 
 INSERT INTO user (username, password, email, created_at, updated_at, deleted)
 VALUES
-    ('user1', 'password1', 'user1@example.com', NOW(), NOW(), false),
-    ('user2', 'password2', 'user2@example.com', NOW(), NOW(), false),
-    ('user3', 'password3', 'user3@example.com', NOW(), NOW(), false);
+    ('홍길동', 'hong_password', 'hong@example.com', NOW() - INTERVAL 10 DAY, NOW() - INTERVAL 10 DAY, false),
+    ('김철수', 'kim_password', 'kim@example.com', NOW() - INTERVAL 5 DAY, NOW() - INTERVAL 5 DAY, false),
+    ('이영희', 'lee_password', 'lee@example.com', NOW() - INTERVAL 2 DAY, NOW() - INTERVAL 2 DAY, false);
 
 FLUSH PRIVILEGES;
