@@ -10,6 +10,7 @@ public enum ErrorType {
     EMPTY_FIELD("V-01", "빈 필드가 존재합니다.", "빈 필드가 존재합니다.", HttpStatusCode.valueOf(400)),
     INVALID_EMAIL_FORMAT("V-02", "이메일 형식이 유효하지 않습니다.", "이메일 형식이 유효하지 않습니다.", HttpStatusCode.valueOf(400)),
     PASSWORD_MISS_MATCH("V-03", "비밀번호 확인이 일치하지 않습니다.", "비밀번호 확인이 일치하지 않습니다.", HttpStatusCode.valueOf(400)),
+    INVALID_FIELD_VALUE("V-04", "유효하지 않은 값이 입력되었습니다.", "유효하지 않은 값이 입력되었습니다.", HttpStatusCode.valueOf(400)),
     DUPLICATE_ENTITY("D-01", "이미 존재하는 데이터입니다.", "이미 존재하는 데이터입니다.", HttpStatusCode.valueOf(400)),
     DATA_NOT_FOUND("D-02", "존재하지 않는 데이터입니다.", "존재하지 않는 데이터입니다.", HttpStatusCode.valueOf(404)),
     AUTHENTICATION_FAILED("A-01", "인증에 실패했습니다.", "인증에 실패했습니다.", HttpStatusCode.valueOf(400)),

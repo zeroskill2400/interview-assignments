@@ -70,6 +70,9 @@ subprojects {
 		implementation 'com.sun.xml.bind:jaxb-impl:4.0.1'
 		implementation 'com.sun.xml.bind:jaxb-core:4.0.1'
 		implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+
+		// hash 암호화 라이브러리
+		implementation 'org.mindrot:jbcrypt:0.4'
 	}
 
 	test {
