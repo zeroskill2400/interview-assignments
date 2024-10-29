@@ -41,7 +41,7 @@ public class AuthController {
     }
 
     @GetMapping("/protected")
-    public ApiResponse<?> protectedRoute(@RequestHeader String token) {
+    public ApiResponse<?> protectedRoute(@RequestHeader("Authorization") String token) {
         if(validateJwt(token)) {
             return ApiResponse.of("success granted");
         }

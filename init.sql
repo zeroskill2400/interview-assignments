@@ -2,6 +2,8 @@
 CREATE USER IF NOT EXISTS 'zeroskill2400'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Zeroskill2400';
 GRANT ALL PRIVILEGES ON *.* TO 'zeroskill2400'@'%' WITH GRANT OPTION;
 
+CREATE DATABASE IF NOT EXISTS db;
+
 use db;
 
 CREATE TABLE IF NOT EXISTS user (
@@ -9,15 +11,12 @@ CREATE TABLE IF NOT EXISTS user (
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    age INT NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    gender ENUM('MALE', 'FEMALE', 'ANONYMOUS') NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted BOOLEAN NOT NULL DEFAULT FALSE
 );
-
-INSERT INTO user (username, password, email, created_at, updated_at, deleted)
-VALUES
-    ('홍길동', 'hong_password', 'hong@example.com', NOW() - INTERVAL 10 DAY, NOW() - INTERVAL 10 DAY, false),
-    ('김철수', 'kim_password', 'kim@example.com', NOW() - INTERVAL 5 DAY, NOW() - INTERVAL 5 DAY, false),
-    ('이영희', 'lee_password', 'lee@example.com', NOW() - INTERVAL 2 DAY, NOW() - INTERVAL 2 DAY, false);
 
 FLUSH PRIVILEGES;
