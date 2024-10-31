@@ -3,7 +3,9 @@ rootProject.name = 'interview-assignments'
 include ':core:common'
 include ':api:auth-api'
 include ':api:user-api'
+include ':api:post-api'
 
 project(':core:common').projectDir = file('core/common')
 project(':api:auth-api').projectDir = file('api/auth-api')
 project(':api:user-api').projectDir = file('api/user-api')
+project(':api:post-api').projectDir = file('api/post-api')

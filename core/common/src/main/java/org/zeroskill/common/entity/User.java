@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user")
-@SQLDelete(sql = "UPDATE users SET deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE user SET deleted = true WHERE id = ?")
 @FilterDef(name = "deletedFilter", parameters = @ParamDef(name = "isDeleted", type = Boolean.class))
 @Filter(name = "deletedFilter", condition = "deleted = :isDeleted")
 @Getter
