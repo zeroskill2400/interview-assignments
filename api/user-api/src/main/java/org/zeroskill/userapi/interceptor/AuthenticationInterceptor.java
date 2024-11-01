@@ -23,8 +23,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if ("POST".equalsIgnoreCase(request.getMethod()) && request.getRequestURI().matches("^/users/\\d+$")) {
-            return true;
+        String method = request.getMethod();
+        String requestURI = request.getRequestURI();
+
+        if ("POST".equalsIgnoreCase(method) && requestURI.equals("/users")) {
+            return true; // 인증 없이 요청 허용
         }
 
         String token = request.getHeader("Authorization");
