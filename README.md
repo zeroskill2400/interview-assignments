@@ -1,26 +1,26 @@
-<<<<<<< HEAD
-# 44Labs interview-assignments
-
-> assignments 폴더에는 지원하신 포지션별로 필요한 과제가 준비되어 있습니다:
-- Back-End
-- DevOps
-- Flutter(Mobile)
-
-## 인터뷰 과제
-> 먼저 지원하신 포지션의 폴더에 있는 guide.md 파일을 확인하시고, 요청된 과제를 정해진 시간 내에 제출해 주시기 바랍니다.
-
-assignments 폴더의 guide.md 파일을 확인하시면, 각 포지션별 수행 과제와 필수 제출 파일 목록이 안내되어 있습니다.
-과제 완료 후, fork한 레포지토리에서 작업을 완료하고 PR(Pull Request)로 제출해 주세요.
-더 자세한 내용은 각 포지션별 guide.md 파일을 참조해 주십시오.
-
-> 담당자 문의: dev@44labs.com
-=======
-## 서비스 실행
-
-프로젝트의 기본 서비스를 실행순서
-
-- db 실행: 도커 킨 후 아래 명령어 실행하면됩니다.
-```bash
-docker-compose -f docker-compose.base.yml up -d
-```
->>>>>>> 42b3e25 (feat: Docker에서 MySQL 설정 및 기본 사용자 구성)
+1. 초기 설정
+   - db 실행: 도커 킨 후 아래 명령어 실행하면됩니다.
+   ```bash
+   docker-compose -f docker-compose.base.yml up -d
+   ```
+2. 회원가입/로그인 시나리오
+   회원가입: http://localhost:18082/users 엔드포인트에 POST 요청 (이메일, 비밀번호 포함).
+   > > {
+   > > "username": "beomsu123",
+   > > "password": "1234",
+   > > "email": "zeroskill2412@gmail.com",
+   > > "age": 27,
+   > > "phone": "010-8628-2287",
+   > > "gender": "MALE"
+   > > }
+   > > 로그인: http://localhost:18081/auth/login 엔드포인트에 POST 요청 (이름, 이메일, 비밀번호, 이메일, 핸드폰번호, 성별 포함).
+   > > 성공 시 JWT 토큰 발급.
+3. 사용자 관리 시나리오
+   사용자 조회: /user/{userId} 엔드포인트에 GET 요청.
+   사용자 정보 수정: /user/{userId} 엔드포인트에 PUT 요청 (이름, 이메일 등).
+   사용자 삭제: /user/{userId} 엔드포인트에 DELETE 요청.
+4. 게시판 시나리오
+   게시글 작성: /post 엔드포인트에 POST 요청.
+   게시글 조회: /post/{postId} 엔드포인트에 GET 요청.
+   게시글 수정: /post/{postId} 엔드포인트에 PUT 요청.
+   게시글 삭제: /post/{postId} 엔드포인트에 DELETE 요청.
