@@ -15,8 +15,8 @@ public class GlobalExceptionHandler {
     private static final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
 
     @Order(1)
-    @ExceptionHandler(InterruptedException.class)
-    public <T> ResponseEntity<ApiResponse<T>> handleUserApiException(InterviewException e) {
+    @ExceptionHandler(InterviewException.class) // 수정된 부분
+    public <T> ResponseEntity<ApiResponse<T>> handleInterviewException(InterviewException e) {
         return new ResponseEntity<>(ApiResponse.of(e.getCode(), e.getExtMsg()), e.getHttpStatusCode());
     }
 
