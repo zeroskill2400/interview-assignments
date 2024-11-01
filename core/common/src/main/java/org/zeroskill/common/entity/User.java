@@ -76,6 +76,11 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public void updateId(Long id) {
+        this.id = id;
+        this.updatedAt = LocalDateTime.now();
+    }
+
     public void updateUsername(String username) {
         this.username = username;
         this.updatedAt = LocalDateTime.now();
