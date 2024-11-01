@@ -23,7 +23,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if ("POST".equalsIgnoreCase(request.getMethod()) && request.getRequestURI().matches("^/users/\\d+$")) {
+        if ("POST".equalsIgnoreCase(request.getMethod()) && (request.getRequestURI().matches("^/users/\\d+$") || "/users".equals(request.getRequestURI()))) {
             return true;
         }
 
