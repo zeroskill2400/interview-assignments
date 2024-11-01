@@ -23,3 +23,6 @@ spring:
 
 jwt:
   secret: supersecretkey
+
+auth-api:
+  url: http://localhost:18081  # auth-api ??? ???? URL
