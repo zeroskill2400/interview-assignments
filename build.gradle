@@ -73,6 +73,8 @@ subprojects {
 
 		// hash 암호화 라이브러리
 		implementation 'org.mindrot:jbcrypt:0.4'
+
+		implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	}
 
 	test {

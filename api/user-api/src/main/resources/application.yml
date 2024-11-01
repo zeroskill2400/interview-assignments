@@ -23,3 +23,6 @@ spring:
 
 jwt:
   secret: supersecretkey
+
+auth-api:
+  url: http://localhost:18081  # auth-api 모듈이 동작하는 URL

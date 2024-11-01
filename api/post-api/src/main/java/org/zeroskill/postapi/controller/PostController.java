@@ -7,7 +7,6 @@ import org.zeroskill.common.dto.request.AddPostRequest;
 import org.zeroskill.common.dto.request.UpdatePostRequest;
 import org.zeroskill.common.dto.response.ApiResponse;
 import org.zeroskill.common.service.PostService;
-import org.zeroskill.common.service.UserService;
 
 @RestController
 @RequestMapping("/posts")
@@ -15,7 +14,6 @@ import org.zeroskill.common.service.UserService;
 public class PostController {
 
     private final PostService postService;
-    private final UserService userService;
 
     @PostMapping("/{userId}")
     public ApiResponse<PostDto> addPost(@PathVariable("userId") Long userId, @RequestBody AddPostRequest request) {
